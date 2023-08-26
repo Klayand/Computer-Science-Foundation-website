@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app span{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .person{
+          background:    red;
+        }
+        .kong{
+            background: white;
+        }
+        .shitu{
+            background: #8c8c8c;
+        }
+        .yellow{
+            background: yellow;
+        }
+        .xiaozi{
+            background: burlywood;
+        }
+        #context{
+            position: absolute;
+            right: 10%;
+            top: 25%;
+            font-size: 50px;
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body onkeydown="doKeyDown(event)">
+    <h1><a href="../Leisure block.html" style="text-decoration: none;text-align: center;">返回主页</a></h1>
+<div id="app"></div>
+<canvas id="canvas"></canvas>
+<div id="context"></div>
+</body>
+<script>
+    window.onload=function(){
+        // let can = document.getElementById("canvas");
+        // cxt=can.getContext("2d");
+        load(levels[cuindex],true);
+        //3 5  j  35 1
+        //  let image = new Image();
+        //  image.src="3.png";
+        //  image.οnlοad=function (){
+        //      cxt.drawImage(image,0,35,100,100);
+        //  }
+
+    }
+    let x,y,flag=0,xian;//记录上一个值
+    let maxcount,cucount=0;//最多的 值
+    let cuindex=0;//当前关卡
+    let conll;//克隆对象
+    let map = new Map();
+    let map2 = new Map();//食物 2,3
+    map.set(0,"<span class=\"kong\"></span>");
+    map.set(1,"<span class=\"shitu\"></span>");
+    map.set(2,"<span class=\"yellow\"></span>");
+    map.set(3,"<span class=\"xiaozi\"></span>");
+    map.set(4,"<span class=\"person\"></span>");
+    function dian(x,y,key) {
+        let arr;
+        switch (key) {
+            case 37://左键头 0
+                arr=[x,y-1];
+                break;
+            case 38://上键头 1
+                arr=[x-1,y];
+                break;
+            case 39://右箭头 2
+                arr=[x,y+1];
+                break;
+            case 40://下箭头 3
+                arr=[x+1,y];
+                break;
+        }
+        return arr;
+    }
+    function doKeyDown(event){
+        if(event.keyCode%37<4){
+        xian=event.keyCode;
+        let dian1 = dian(x,y,xian);
+       move(dian1[0],dian1[1]);
+
+        }
+    }
+    function move(cx,cy) {
+        //判断下一步的值是什么
+       switch (levels[cuindex][cx][cy]) {
+        case 0:
+        case 2:
+            //离开判断 是否上一个是我 现在的 位置是否是食物
+            //x y
+            flag=levels[cuindex][cx][cy];
+            levels[cuindex][cx][cy]=4;
+            if(map2.get(x+","+y))
+                levels[cuindex][x][y]=2;
+            else{
+                if(flag!==2){
+                    levels[cuindex][x][y]=flag;
+                }else{
+                    levels[cuindex][x][y]=0;
+                }
+            }
+            x=cx;
+            y=cy;
+            load(levels[cuindex]);
+            break;
+            case 3 : //是箱子
+                let a = dian(cx,cy,xian);
+                switch (levels[cuindex][a[0]][a[1]]) {
+                    case 0:
+                    case 2:
+                        //flag=levels[0][cx][cy]
+                        if(levels[cuindex][a[0]][a[1]]===2){
+                            cucount++;
+                        }
+                        //判断之前的是否为 箱子
+                        if(map2.get(cx+","+cy)){
+                            cucount--;
+                        }
+                        levels[cuindex][a[0]][a[1]]=3;
+                        levels[cuindex][cx][cy]=4;
+                        levels[cuindex][x][y]=flag;
+                        x=cx;
+                        y=cy;
+                        load(levels[cuindex]);
+                        break;
+                }
+                break;
+       }
+        if(cucount===maxcount){
+            //替换
+            levels[cuindex]=conll;
+            load(levels[++cuindex],true);
+        }
+        else
+            info();
+    }
+    function info() {
+        document.getElementById("context").innerText="当前关卡"+cuindex+"完成了的"+cucount+"还有"+(maxcount-cucount);
+
+    }
+    function load(arr,flag){
+        let byId = document.getElementById("app");
+        byId.innerHTML="";
+        if(flag) {//第一次 的参数设定
+            conll=[arr.length];
+            maxcount=0;
+            cucount=0;
+            map2.clear();
+            info();
+        }
+       for (let i=0;i<arr.length;i++){
+           byId.innerHTML+="<div>"
+           for (let j=0;j<arr[i].length;j++){
+               byId.innerHTML+=map.get(arr[i][j]);
+               if(flag) {
+                   if(!conll[i])
+                   conll[i]=[];
+                   conll[i][j]=arr[i][j];
+               if(arr[i][j]===4){
+                   x=i;
+                   y=j;
+               }
+               if(arr[i][j]===2){
+                   map2.set(i+","+j,true);
+                       maxcount++;
+                   }
+               }
+           }
+           byId.innerHTML+="</div>"
+       }
+    }
+    //地图
+    let levels=[];
+    levels[0]=[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,1,2,1,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0],
+        [0,0,0,0,1,1,1,3,0,3,2,1,0,0,0,0],
+        [0,0,0,0,1,2,0,3,4,1,1,1,0,0,0,0],
+        [0,0,0,0,1,1,1,1,3,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,1,2,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+    levels[1]=[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0],
+        [0,0,0,0,1,4,0,0,1,0,0,0,0,0,0,0],
+        [0,0,0,0,1,0,3,3,1,0,1,1,1,0,0,0],
+        [0,0,0,0,1,0,3,0,1,0,1,2,1,0,0,0],
+        [0,0,0,0,1,1,1,0,1,1,1,2,1,0,0,0],
+        [0,0,0,0,0,1,1,0,0,0,0,2,1,0,0,0],
+        [0,0,0,0,0,1,0,0,0,1,0,0,1,0,0,0],
+        [0,0,0,0,0,1,0,0,0,1,1,1,1,0,0,0],
+        [0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+
+
+    levels[2]=[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0,0,0,1,1,1,0,0,0],
+        [0,0,0,1,1,3,1,1,1,0,0,0,1,0,0,0],
+        [0,0,0,1,0,4,0,3,0,0,3,0,1,0,0,0],
+        [0,0,0,1,0,2,2,1,0,3,0,1,1,0,0,0],
+        [0,0,0,1,1,2,2,1,0,0,0,1,0,0,0,0],
+        [0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+    levels[3]=[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0],
+        [0,0,0,0,1,4,3,0,1,0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,3,0,1,1,0,0,0,0,0,0],
+        [0,0,0,0,1,1,0,3,0,1,0,0,0,0,0,0],
+        [0,0,0,0,1,2,3,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,1,2,2,5,2,1,0,0,0,0,0,0],
+        [0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+
+</script>
+</html>
+

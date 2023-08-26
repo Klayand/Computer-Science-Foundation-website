@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取--执行周期</title>
+    <link rel="stylesheet" href="../../CSS/sidebar.css">
+    <link rel="stylesheet" href="../../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../../exercise/exercise.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+              <li>
+                  <a href="../../frontpage.html">
+                      <span class="icon"><i class="fa fa-bars"></i></span>
+                      <span class="title">首页</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="../Hardware.html">
+                       <span class="icon"><i class="fa fa-ravelry"></i></span>
+                       <span class="title">硬件骨骼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../software/Software.html">
+                        <span class="icon"><i class="fa fa-superpowers"></i></span>
+                        <span class="title">软件器官</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="../../Network&Datestructure/Network&Datestructure.html">
+                         <span class="icon"><i class="fa fa-bluetooth-b"></i></span>
+                         <span class="title">网络神经</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="../../Algorithm/Algorithm.html">
+                          <span class="icon"><i class="fa fa-database"></i></span>
+                          <span class="title">算法大脑</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="../../hotpoint/hotpoint.html">
+                           <span class="icon"><i class="fa fa-bookmark"></i></span>
+                           <span class="title">热点问题</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../小组介绍/小组介绍.html">
+                            <span class="icon"><i class="fa fa-user-o"></i></span>
+                            <span class="title">小组介绍</span>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="../../Leisure block/Leisure block.html">
+                             <span class="icon"><i class="fa fa-book"></i></span>
+                             <span class="title">休闲街区</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <span class="icon"><i class="fa fa-desktop"></i></span>
+                              <span class="title">返回顶部</span>
+                           </a>
+                       </li>
+              </ul>
+        </div>
+        <div class="tip">
+            <i class="fa fa-chevron-right"> </i>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <div class="box">
+        <div id="bread">
+            <h2>读取--执行周期</h2>
+            <h3>计算机如何工作</h3>
+        </div>
+    </div>
+    <div id="main">
+        <h1 style="color: #008cff;">读取--执行周期</h1>
+        <img src="./image/cycle1.jpg" width="700px">
+        <img src="./image/cycle2.jpg" width="700px">
+        <p>现在以一个具体实例来讲解一下Fetch-Decode-Excute Cycle如何执行：
+        <p>我们以求14-10=4为例：</p>
+        <p>下图表示了在执行这个项目前内存和CPU的情况。R1,R1和R3都是普通寄存器。R1和R2存储输入数据；R3存储输出数据。I寄存器是指令寄存器，PC是程序计数器。</p>
+        <img src="./image/eg cycle.jpg" width="700px">
+        <p>第一步：在Load 200 R1的这一步中，机器会执行Fetch-Decode-Excute这三步去加载位于内存编号200的内容，并将其存入R1中。</p>
+        <p>第二步，在读取Load 201 R2的这一步中，机器会执行Fetch-Decode-Excute这三步去加载位于内存编号201的内容，并将其存入R2中。</p>
+        <p>第三步，在Add R1 R2 R3的这一步中，机器会执行Fetch-Decode-Excute这三步把R1和R2中的数据加起来，并将结果存储在R3中。</p>
+        <p>第四步，在Store 202 R3的这一步中，机器会执行Fetch-Decode-Excute这三步来讲计算结果存储在202中。</p>
+        <img src="./image/eg cycle2.jpg" width="700px">
+       
+        
+        
+        
+    </div>
+
+
+
+
+    <div id="sidebar">
+        <strong>导航栏</strong>
+        <hr>
+        <a href="#">
+            <span style="color: #008cff;">
+            <p>读取---执行周期</p>
+        </span>
+        </a>
+        <hr>
+        <a href="./IO如何与CPU交流.html">
+            <p>I/O如何与CPU交流</p>
+        </a>
+        <hr>
+    </div>
+</body>
+
+</html>

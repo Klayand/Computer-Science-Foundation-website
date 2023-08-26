@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二章练习</title>
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../exercise/exercise.css">
+    <script src="../exercise/choose.js"></script>
+    <script src="../exercise/jquery-3.4.1.min.js"></script>
+   
+</head>
+
+<body onload="Init1()">
+    <div class="container">
+        <div class="nav">
+            <ul>
+              <li>
+                  <a href="../frontpage.html">
+                      <span class="icon"><i class="fa fa-bars"></i></span>
+                      <span class="title">首页</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="../hardware/Hardware.html">
+                       <span class="icon"><i class="fa fa-ravelry"></i></span>
+                       <span class="title">硬件骨骼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../software/Software.html">
+                        <span class="icon"><i class="fa fa-superpowers"></i></span>
+                        <span class="title">软件器官</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="../Network&Datestructure/Network&Datestructure.html">
+                         <span class="icon"><i class="fa fa-bluetooth-b"></i></span>
+                         <span class="title">网络神经</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="../Algorithm/Algorithm.html">
+                          <span class="icon"><i class="fa fa-database"></i></span>
+                          <span class="title">算法大脑</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="../hotpoint/hotpoint.html">
+                           <span class="icon"><i class="fa fa-bookmark"></i></span>
+                           <span class="title">热点问题</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../小组介绍/小组介绍.html">
+                            <span class="icon"><i class="fa fa-user-o"></i></span>
+                            <span class="title">小组介绍</span>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="../Leisure block/Leisure block.html">
+                             <span class="icon"><i class="fa fa-book"></i></span>
+                             <span class="title">休闲街区</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <span class="icon"><i class="fa fa-desktop"></i></span>
+                              <span class="title">返回顶部</span>
+                           </a>
+                       </li>
+              </ul>
+        </div>
+        <div class="tip">
+            <i class="fa fa-chevron-right"> </i>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <div class="box">
+        <div id="bread">
+            <h2>第二章练习</h2>
+            <h3>快来检验一下你的学习成果吧！</h3>
+        </div>
+    </div>
+    <div id="index_image">
+    </div>
+    <div id="main">
+        <fieldset id="single">
+            <strong>第一章练习</strong>
+            <p id="q1">1.The  earliest operating system, called___operating systems, only had to ensure that resources were transferred from one job to the next.（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="1"><label
+                        for="q1A">A.batch</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.time-sharing</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.personal</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.parallel</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">A</span></p>
+            <br>
+            <p id="q2">2.Historically, which is the operating system of choice for serious programmers?()</p>
+            <ol>
+                <li><input id="q2A" type="radio" name="ans2" value="0"><label for="q2A">A.Linux</label></li>
+                <li><input id="q2B" type="radio" name="ans2" value="0"><label for="q2B">B.DOS</label></li>
+                <li><input id="q2C" type="radio" name="ans2" value="1"><label for="q2C">C.Unix</label></li>
+                <li><input id="q2D" type="radio" name="ans2" value="0"><label for="q2D">D.Windows</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">C</span></p>
+            <br>
+            <p id="q3">3.DOS is considered a____operating system.</p>
+            <p>Answers：<input placeholder="请输入答案" name="ans3" /></p>
+            <p class="block_ans">Personal</p>
+            <br>
+
+            <p id="q4">4.The two causes of the software crisis</p>
+            <p> Answers：<input placeholder="请输入答案" name="ans4" /></p>
+            <p class="block_ans">Subjective neglect of demand analysis and the error is that software development is programming</p>
+            <br>
+
+            <p id="q5">5.Judge true or false:Software is represented in binary bits and is usually stored and transmitted in the form of electricity, magnetism, light, etc., making it easy to copy.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q5A" type="radio" name="ans5" value="1"><label for="q5A">True</label></li>
+                <li><input id="q5B" type="radio" name="ans5" value="0"><label for="q5B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">True</span></p>
+            <br>
+            <p id="q6">6.Judge true or false:The main feature of a real-time operating system is that it allows multiple users to use a computer online at the same time.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q6A" type="radio" name="ans6" value="0"><label for="q6A">True</label></li>
+                <li><input id="q6B" type="radio" name="ans6" value="1"><label for="q6B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">False</span></p>
+            <br>
+            <p id="q7">7.Judge true or false:A computer can have more than one operating system, but only one OS is in control at any given time.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q7A" type="radio" name="ans7" value="1"><label for="q7A">True</label></li>
+                <li><input id="q7B" type="radio" name="ans7" value="0"><label for="q7B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">True</span></p>
+            <br>
+            <p id="q8">8.In a computer system, it is___that is at the bottom of the line that comes into direct contact with the hardware and supports other software()</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="0"><label
+                        for="q1A">A.language handler</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="1"><label
+                        for="q1B">B.operating system</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.utility</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.database management system</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">B</span></p>
+            <br>
+            <p id="q9">9.What forms the foundation of software engineering is（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="1"><label
+                        for="q1A">A.Process</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.Tool</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.Design</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.Method</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">A</span></p>
+            <br>
+            <p id="q10">10.The following software belongs to the application software is（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="0"><label
+                        for="q1A">A.Financial management software</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.Database</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.Compiler</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="1"><label for="q1D">D.Browser</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">D</span></p>
+            <br>  
+        </fieldset>
+        <button id="submit" type="button" onclick="showWhichWrong()">提交</button>
+    </div>
+</div>
+    <div id="sidebar">
+        <strong>导航栏</strong>
+        <hr>
+        <a href="./exercise1.html">
+                <p>硬件学习</p>
+            </span>
+        </a>
+        <hr>
+        <a href="#">
+            <span style="color: #008cff;">
+            <p>软件学习</p>
+            </span>
+        </a>
+        <hr>
+        <a href="./exercise3.html">
+            <p>算法学习</p>
+        </a>
+        <hr>
+        <a href="./exercise4.html">
+            <p>网络学习</p>
+        </a>
+        <hr>
+    </div>
+</body>
+
+</html>

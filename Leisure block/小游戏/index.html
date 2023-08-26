@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="../Leisure block.html" style="text-align: center;text-decoration: none;">返回主页</a></h1>
+    <canvas id="game" width="400" height="400" style="background: #000;" >对不起，您的浏览器不支持canvas</canvas>
+    <script>
+        var snake = [41, 40];   //蛇身
+        var direction = 1;      //方向
+        var food = 43;          //食物的位置
+        var n;                  // 下一个蛇头的位置
+        var box = document.getElementById('game').getContext('2d');
+        // 绘制每个点位
+        var draw = function(seat, color) {
+            box.fillStyle = color;
+            box.fillRect(seat % 20 * 20 +1, ~~(seat / 20) * 20 + 1, 18, 18);
+        }
+        document.onkeydown = function(e) {
+            // 获取蛇头方向
+            direction = snake[1] - snake[0] == (
+                n = [-1, -20, 1, 20][(e.keyCode - 37)] || direction
+            ) ? direction : n;
+        }
+        ;(function() {
+            snake.unshift(n = snake[0] + direction); // 得出蛇头的位置: 蛇头 + 方向
+            // 碰撞检测
+            if (
+                (snake.indexOf(n, 1) > 0) ||    // 撞上蛇身
+                (n < 0) ||                      // 撞墙 上
+                (n > 399) ||                    // 撞墙 下
+                (direction === 1 && n % 20 === 0) || // 撞墙 右
+                (direction === -1 && n % 20 === 19)  // 撞墙 做
+            ) {
+                // return console.log('game over')
+                return alert('game over')
+            }
+            // 绘制蛇头
+            draw(n, 'red');
+            if (n === food) {
+                // 得到下一个食物的位置
+                while(snake.indexOf(food = ~~(Math.random() * 400))> 0 );
+                // 绘制下一个食物
+                draw(food, 'yellow');
+            } else {
+                // 蛇尾出列
+                draw(snake.pop(), 'black');
+            }
+            setTimeout(arguments.callee, 150);
+        })();
+    </script>
+</body>
+</html>

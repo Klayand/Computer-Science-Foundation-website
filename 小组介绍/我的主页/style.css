@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    background: url(../小组网站主页/Zhang\ Xiafei.jpg);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}

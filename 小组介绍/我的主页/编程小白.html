@@ -1,0 +1,73 @@
+<html>
+<head><title>张夏菲</head></title>
+<style type="text/css">
+.style1 {
+				font-family: "Courier New", Courier, monospace;
+				color: #FF0000;
+				text-decoration: blink;
+}
+.style2 {
+				font-family: "Courier New", Courier, monospace;
+				color: #000000;
+				text-decoration: blink;
+}
+</style>
+<h1 class="style1"><em><strong></strong></em></h1>
+<p class="style1"><a href="我的网页（修改）.html">Click here to come back</a></p>
+<hr size="10" width="100%">
+<h2>编程小白（秃头）的自述</h2>
+<p><strong>我从暑假开始自学编程，因为和高中信息竞赛的同学玩得很好（抱大腿），在他们的推荐下，我走上了编程这个不归路，并做好准备和我的头发say goodbye...所幸，在不断学习，上机操作中，我发现了编程的魅力所在，每在洛谷上完成一道编程题，我学习编程的决心便又坚定了一分。虽然我现在编程水平还不是很高，但我相信，在我的不懈努力（掉发）下，I will make it eventually！</strong></p>
+<h3>一</h3>
+<code><p>
+	#include<iostream></p>
+<p>#include<stdio.h></p>
+<p>using namespace std;</p>
+<p>void action1(int x,int y)</p>
+<p>{printf("x+y=%d\n",x+y);</p>
+<p>}</p>
+<p>void action2(int x,int y)</p>
+	<p>{</p>
+<p>printf("x*y=%d\n",x*y);<p>
+<p>}</p>
+<p>int main()</p>
+<p>{</p>
+<p>char ch;</p>
+<p>ch=getchar();</p>
+<p>int a,b;</p>
+<p>a=13;</p>
+<p>b=15;</p>
+<p>switch(ch)</p>
+<P>{</P>
+<p>case 'a':</p>
+<p>case 'A':action1(a,b);break;</p>
+<p>case 'b':</p>
+<p>case 'B':action2(a,b);break;</p>
+<p>default:putchar(ch);</p>
+<p>}</p>
+<p>return 0;</p>
+<p>}
+</p></code>
+<hr>
+<h3>二</h3>
+<code>
+<p>#include<iostream></p>
+<p>#include<algorithm></p>
+<p>using namespace std;</p>
+<p>float m[101];</p>
+<p>int n;</p>
+<p>int main()</p>
+<p>{</p>
+    <p>cin>>n;</p>
+    <p>for(int i=1;i<=n;i++)</p>
+      <p>cin>>m[i];</p>
+    <p>for(int i=1;i<=n;i++)</p>
+      <p>for(int j=1;j<=n-i;j++)</p>
+        <p>{</p>
+          <p>if(m[j]>m[j+1])</p>
+            <p>swap(m[j],m[j+1]);</p>
+        <p>}</p>
+    <p>for(int i=1;i<=n;i++)</p>
+      <p>printf("%5.2f",m[i]);</p>
+    <p>return 0;</p>
+<p>}</p>
+</code>

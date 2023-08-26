@@ -1,0 +1,67 @@
+<html>  
+<head>  
+<title>进度条</title>
+　<script>
+  
+   var second=2;
+   var
+       time=document.getElementById("time");
+   function showtime() {
+       //定义一个方法，获取span标签，修改span标签体内容、事件
+       second--;
+       if (second<=0){
+           location.href="../frontpage.html";
+       }
+
+       time.innerHTML=second+"";
+   }
+   setInterval(showtime,1000);
+
+</script>
+       
+<style type="text/css">  
+.processcontainer{  
+   margin: auto;
+   width:450px;  
+   border:3px solid white;  
+   height:50px; 
+   margin-top: 20%; 
+ } 
+#processbar{  
+   background:white; 
+   color:black; 
+   float: left; 
+   height:100%;  
+   text-align:center;  
+   line-height:150%; 
+   font-weight: bolder;
+   font-size: larger;
+   line-height: 50px;
+   font-family: 'Courier New', Courier, monospace;
+ }  
+</style>  
+<script type="text/javascript">  
+ function setProcess(){  
+  var processbar = document.getElementById("processbar");  
+  processbar.style.width = parseInt(processbar.style.width) + 1 + "%";
+  processbar.innerHTML = processbar.style.width;  
+  if(processbar.style.width == "100%"){  
+     window.clearInterval(bartimer);  
+  }  
+ }  
+var bartimer = window.setInterval(function(){setProcess();},20);  
+window.onload = function(){  
+   
+}  
+</script> 
+
+
+</head>  
+<body bgcolor="black"> 
+  <h1 style="text-align: center;font-size: 50px;color: white;font-family: 幼圆;">Loading...</h1>
+  <div class="processcontainer">  
+   <div id="processbar" style="width:0%;"></div>  
+  </div> 
+
+</body>  
+</html>

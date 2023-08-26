@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三章练习</title>
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../exercise/exercise.css">
+    <script src="../exercise/choose.js"></script>
+    <script src="../exercise/jquery-3.4.1.min.js"></script>
+    
+</head>
+
+<body onload="Init1()">
+    <div class="container">
+        <div class="nav">
+            <ul>
+              <li>
+                  <a href="../frontpage.html">
+                      <span class="icon"><i class="fa fa-bars"></i></span>
+                      <span class="title">首页</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="../hardware/Hardware.html">
+                       <span class="icon"><i class="fa fa-ravelry"></i></span>
+                       <span class="title">硬件骨骼</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../software/Software.html">
+                        <span class="icon"><i class="fa fa-superpowers"></i></span>
+                        <span class="title">软件器官</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="../Network&Datestructure/Network&Datestructure.html">
+                         <span class="icon"><i class="fa fa-bluetooth-b"></i></span>
+                         <span class="title">网络神经</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="../Algorithm/Algorithm.html">
+                          <span class="icon"><i class="fa fa-database"></i></span>
+                          <span class="title">算法大脑</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="../hotpoint/hotpoint.html">
+                           <span class="icon"><i class="fa fa-bookmark"></i></span>
+                           <span class="title">热点问题</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../小组介绍/小组介绍.html">
+                            <span class="icon"><i class="fa fa-user-o"></i></span>
+                            <span class="title">小组介绍</span>
+                         </a>
+                     </li>
+                     <li>
+                         <a href="../Leisure block/Leisure block.html">
+                             <span class="icon"><i class="fa fa-book"></i></span>
+                             <span class="title">休闲街区</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <span class="icon"><i class="fa fa-desktop"></i></span>
+                              <span class="title">返回顶部</span>
+                           </a>
+                       </li>
+              </ul>
+        </div>
+        <div class="tip">
+            <i class="fa fa-chevron-right"> </i>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <div class="box">
+        <div id="bread">
+            <h2>第三章练习</h2>
+            <h3>快来检验一下你的学习成果吧！</h3>
+        </div>
+    </div>
+    <div id="index_image">
+    </div>
+    <div id="main">
+        <fieldset id="single">
+            <strong>第一章练习</strong>
+            <p id="q1">1.The system bus includes address bus and control bus and____bus.（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="1"><label
+                        for="q1A">A.data</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.character</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.signal</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.input</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">A</span></p>
+            <br>
+            <p id="q2">2.An electronic address consists of two parts: The user name and___.()</p>
+            <ol>
+                <li><input id="q2A" type="radio" name="ans2" value="0"><label for="q2A">A.Filename</label></li>
+                <li><input id="q2B" type="radio" name="ans2" value="1"><label for="q2B">B.Server Host Name</label></li>
+                <li><input id="q2C" type="radio" name="ans2" value="0"><label for="q2C">C.Pseudonym</label></li>
+                <li><input id="q2D" type="radio" name="ans2" value="0"><label for="q2D">D.Device name</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">B</span></p>
+            <br>
+            <p id="q3">3.The computer's main memory stores information that is exchanged directly with the___, and the secondary memory holds information that is not currently in use.</p>
+            <p>Answers：<input placeholder="请输入答案" name="ans3" /></p>
+            <p class="block_ans">CPU</p>
+            <br>
+
+            <p id="q4">4.8.The basic structure of the algorithm does not include___.</p>
+            <p> Answers：<input placeholder="请输入答案" name="ans4" /></p>
+            <p class="block_ans">Logical structure</p>
+            <br>
+
+            <p id="q5">5.Judge true or false:Inside the computer, information is stored, processed and transmitted in the form of ASCII Code.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q5A" type="radio" name="ans5" value="0"><label for="q5A">True</label></li>
+                <li><input id="q5B" type="radio" name="ans5" value="1"><label for="q5B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">False</span></p>
+            <br>
+            <p id="q6">6.Judge true or false:Any program must be loaded into Internal Storage to be executed by the CPU.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q6A" type="radio" name="ans6" value="1"><label for="q6A">True</label></li>
+                <li><input id="q6B" type="radio" name="ans6" value="0"><label for="q6B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">True</span></p>
+            <br>
+            <p id="q7">7.Judge true or false:The decimal number 83 corresponds to the binary number 1010011.(A.True  B.False)</p>
+            <ol>
+                <li><input id="q7A" type="radio" name="ans7" value="1"><label for="q7A">True</label></li>
+                <li><input id="q7B" type="radio" name="ans7" value="0"><label for="q7B">False</label></li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">True</span></p>
+            <br>
+            <p id="q8">8.The two main components of a computer are ___.()</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="1"><label
+                        for="q1A">A.Arithmetic unit and Controller</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.Controllers and Registers</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.Arithmetic and RAM </label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.Controller and RAM</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">A</span></p>
+            <br>
+            <p id="q9">9.Which of the following is not a function of the operating system____.（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="0"><label
+                        for="q1A">A.Manage the hardware and software resources of the computer</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="0"><label
+                        for="q1B">B.Organize computer workflow properly</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="1"><label
+                        for="q1C">C.Complete "translation" of high-level language programs</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.To provide users with convenient, effective and safe working environment</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">C</span></p>
+            <br>
+            <p id="q10">10.12.If the time slice of a time-sharing system is constant, then___, the longer the response time is.（）</p>
+            <ol>
+                <li><input id="q1A" type="radio" name="ans1" value="0"><label
+                        for="q1A">A.The fewer users</label></li>
+                <li><input id="q1B" type="radio" name="ans1" value="1"><label
+                        for="q1B">B.The more users</label></li>
+                <li><input id="q1C" type="radio" name="ans1" value="0"><label
+                        for="q1C">C.The less memory</label></li>
+                <li><input id="q1D" type="radio" name="ans1" value="0"><label for="q1D">D.The more memory</label>
+                </li>
+            </ol>
+            <p class="block_ans">Correct Answer：<span class="anss">B</span></p>
+            <br>  
+        </fieldset>
+        <button id="submit" type="button" onclick="showWhichWrong()">提交</button>
+    </div>
+</div>
+    <div id="sidebar">
+        <strong>导航栏</strong>
+        <hr>
+        <a href="./exercise1.html">
+                <p>硬件学习</p>
+            </span>
+        </a>
+        <hr>
+        <a href="./exercise2.html">
+            <p>软件学习</p>
+        </a>
+        <hr>
+        <a href="#">
+            <span style="color: #008cff;">
+            <p>算法学习</p>
+           </span>
+        </a>
+        <hr>
+        <a href="./exercise4.html">
+            <p>网络学习</p>
+        </a>
+        <hr>
+    </div>
+</body>
+
+</html>

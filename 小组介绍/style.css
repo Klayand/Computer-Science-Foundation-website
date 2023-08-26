@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+html,body{
+    height: 100%;
+   display: grid;
+   place-items: center;
+   background:url(../picture/background.jpg);
+   text-align: center;
+   object-fit: cover;
+   overflow: hidden;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.card{
+    height: 400px;
+    width: 225px;
+    max-width: 250px;
+    margin: 70px 50px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);/*为区块设置阴影效果*/
+}
+
+.card：hover{
+     height: 470px;
+}
+
+.card .top-text{
+    padding: 5px;
+}
+
+.card .top-text p{
+    font-size: 25px;
+    font-weight: 600 ;
+    color: #e74;
+}
+
+.card .top-text .img{
+    height: 350px;
+    width: 100%;
+    text-align: center;
+}
+
+.card .top-text .img img{
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.card .bottom-text{
+    padding: 0 20px 10px 20px;
+    margin-top: 80px;
+    background:white;
+    text-align: justify;
+    font-size: 20px;
+    opacity: 0;/*设置区块透明度*/
+}
+
+.card .bottom-text:hover{
+    margin: 10px;
+    height: 150px;
+    transition: 0.5s;
+    opacity: 1;
+    background: white;
+}
+
+.card .bottom-text .btn{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.card .bottom-text .btn a{
+    text-decoration: none;
+    background: darkorchid;
+    color: darksalmon;
+    padding: 5px 8px;
+    border-radius: 4px;
+    display:inline-flex;/*flex将对象作为弹性伸缩盒显示，inline-flex将其作为内联伸缩盒显示。此处使用flex和inline-flex都可，只不过flex针对水平列，而inline-flex针对元素所处范围*/
+    transition: 0.5s;
+}/*过渡延长时间0.2s*/
+
+.card .bottom-text .btn a:hover{
+    transform: scale(0.9);/*触碰时使原图表缩小到原来的0.9倍*/
+}
+/*@media screen and(mas-width:978px)表示当屏幕宽度小于978px时，下述版块做出相应变化*/
+@media screen and (max-width:978px){
+    .container{
+        flex-wrap:wrap; /*表示在必要时将项目拆开*/
+        flex-direction: column;/*将项目竖行表示*/
+    }
+    .card{
+        max-width: 700px;
+        margin: 60px 0;
+    }
+    
+}
+
+.shouye{
+    width: 85px;
+    height: 30px;
+    background-color: lightsteelblue;
+    text-align: center;
+    margin: 20px 20px;
+    transition: 0.5s;
+}
+
+.shouye:hover{
+    transition: 0.5s;
+    transform: scale(0.9);
+}
+
+.shouye p{
+    text-decoration: none;
+    color: snow;
+    text-align: center;
+}

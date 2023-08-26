@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Frontpage</title>
+<style>
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	body{
+		/*如果不需要3D效果请把下面这行删掉*/
+		perspective: 2500px;
+		overflow: hidden;
+	}
+	
+	#bg{
+		position: absolute;
+		z-index: 0;
+		width: 1920px;
+		height: 1080px;
+		/*如果不需要3D效果把transform属性删掉，下同*/
+		transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg) scale(1.2);
+		/*如果需要添加背景图，请在此添加background属性*/
+		background-image: url(./picture/主页背景图.jpg);
+		opacity: 1;
+	}
+	
+	#box{
+		position: absolute;
+		z-index: 9999;
+		width: 1440px;
+		height: 720px;
+		transform: rotateX(5deg) rotateY(15deg) rotateZ(-5deg);
+	}
+	#box div{
+		position: absolute;
+		border: 2px solid #EEE;
+		background: rgba(0,0,0,0.7);
+		box-shadow: 0px 0px 10px 0px #111;
+		transition: all 0.3s;
+	}
+	#box div:hover{
+		z-index: 9999;
+		transform: scale(1.1);
+		box-shadow: 0px 0px 10px 0px #EEE;
+		background: #FFF;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	h1{text-align: center;
+		color:black;
+		font-family: 幼圆;
+		background-color: aliceblue;
+		opacity: 0.75;
+		font-weight: bolder;
+		padding: 5px;
+	}
+	
+
+</style>
+</head>
+
+<body>
+	
+	<div id="bg"></div>
+	<div id="box">
+		<div onclick="window.open('./hotpoint/hotpoint.html')" style="width: 300px; height: 150px; left: 300px; top: -20px;background-image: url(./picture/热点问题.png);background-size: cover;cursor: pointer;">
+			<h1>热点问题</h1>
+		</div>
+		<div onclick="window.open('./exercise/exercise1.html')"  style="width: 240px; height: 130px; left: 610px; top: 0px;background-image: url(./picture/练习题.png);background-size: cover;cursor: pointer;">
+			<h1>练习题</h1>
+		</div>
+		<div onclick="window.open('./计算机发展史/intro.html')" style="width: 550px; height: 300px; left: 300px; top: 140px;background-image: url(./picture/发展史.png);background-size: cover;">
+		<h1 style="font-size: 40px;">计算机发展史</h1>
+		</div>
+		<div onclick="window.open('./hardware/Hardware.html')" style="width: 200px; height: 200px; left: 90px; top: 90px;background-image: url(./picture/hardware.png);background-size: cover;">
+			<h1>硬件骨骼</h1>
+		</div>
+		<div onclick="window.open('./login/login.html')" style="width: 140px; height: 140px; left:150px; top: 300px;background-image: url(./picture/login.png);background-size: cover;">
+			<h1 style="font-size: 20px;margin-top: 30%;">登录/注册</h1>
+		</div>
+		<div onclick="window.open('./Leisure block/Leisure block.html')"style="width: 350px; height: 200px; left: 860px; top: 240px;background-image: url(./picture/休闲街区.png);background-size: cover;">
+	     <h1>休闲街区</h1>	
+		</div>
+		<div onclick="window.open('./Algorithm/Algorithm.html')" style="width: 200px; height: 200px; left: 290px; top: 450px;background-image: url(./picture/algorithm\ \(2\).PNG);background-size: cover;">
+			<h1 style="font-family: 幼圆;">算法大脑</h1>
+		</div>
+		<div onclick="window.open('./Network&Datestructure/Network&Datestructure.html')" style="width: 200px; height: 200px; left: 500px; top: 450px;background-image: url(./picture/NET.png);background-size: cover;">
+			<h1 style="font-family: 幼圆;">网络神经</h1>
+		</div>
+		<div onclick="window.open('./software/Software.html')" style="width: 200px; height: 200px; left: 860px; top: 30px;background-image: url(./picture/software.PNG);background-size: cover;">
+			<h1 style="font-family: 幼圆;">软件器官</h1>
+		</div>
+		<div onclick="window.open('./小组介绍/小组介绍.html')" style="width: 200px; height: 200px; left: 710px; top: 450px;background-image: url(./picture/introduction.png);background-size: cover;">
+			<h1 style="font-family: 幼圆;">关于我们</h1>
+		</div>
+	</div>
+	
+	<script>
+	
+		var bg = document.getElementById("bg");
+		var box = document.getElementById("box");
+		
+		document.onmousemove=function(e)
+		{
+			
+			/*
+			 * 背景图初始坐标（300,100）,请根据需要自行调整
+			 * 元素名.style.left|top = 初始X|Y坐标（可选） + (e.pageX|Y - 主体内容宽度|高度/2) / 常数（可选） + "px"
+			 */
+			
+			bg.style.left = 300 + (-e.pageX - 960) / 10 + "px";
+			bg.style.top = 100 + (-e.pageY - 540) / 10 + "px";
+			
+			box.style.left = 480 + (-e.pageX - 480) / 5 + "px";
+			box.style.top = 170 + (-e.pageY - 270) / 5 + "px";
+		}
+	
+	</script>
+	
+</body>
+</html>

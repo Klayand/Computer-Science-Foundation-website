@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <script src="../login/javascript.js"></script>
+    <style>
+        #login {
+            margin: 150px auto 0;
+            
+        }
+
+        #background{
+          height: 660px;
+            width: 1060px;
+            margin-left: 15%;
+            margin-top: 90px;
+            overflow: hidden;
+            background-image: url(../picture/background.jpg);
+        }
+
+        form {
+            width: 460px;
+            height: 450px;
+            background-color:rgb(134, 161, 233);
+            font-size: 18px;
+            padding: 50px 75px;
+            border: none;
+            margin: 25px auto;
+            border-radius: 10px;
+            line-height: 250%;
+        }
+
+
+
+        .needinput {
+            height: 40px;
+            width: 300px;
+            padding: 0 35px;
+            border: none;
+            background: #F8F9F9;
+            font-size: 15px;
+            box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7), inset 0px 2px 5px #aaaaaa;
+            color: #17202A;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            margin: 20px auto 0;
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            font: 16px "黑体";
+            background-color: rgb(78, 162, 241);
+            color: #F8F9F9;
+        }
+
+        .smtxt {
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        #header2 {
+         z-index: 10;
+         width: calc(100% - 60px);
+         height: 90px;
+         position: absolute;
+         top: 0px;
+         left: 30px;
+         background-color: rgba(154, 247, 255,0.3);
+        }
+
+        #loginbox2 {
+          z-index: 10;
+          position: absolute;
+          background-color:rgba(255, 255, 255, 0.3);
+          height: 50px;
+          width: 120px;
+          top: 20px;
+          right: 3%;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          line-height: 50px;
+          font-size: 16px;
+          font-family: 华文琥珀;
+        }
+
+        #loginbox2 a{
+         color: #000;
+         margin-left: 15%;
+         margin-right: -5%;
+        }
+
+
+        h1{
+          text-align: center;
+          color: #000;
+          font-family: 华文琥珀;
+          margin-top: 30px;
+        }
+
+        #header2 img{
+         width: 80px;
+         height: 80px;
+         margin-top: -60px;
+        }
+
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav">
+        <ul>
+          <li>
+              <a href="../intro.html">
+                  <span class="icon"><i class="fa fa-bars"></i></span>
+                  <span class="title">首页</span>
+               </a>
+           </li>
+           <li>
+               <a href="../hardware/Hardware.html">
+                   <span class="icon"><i class="fa fa-ravelry"></i></span>
+                   <span class="title">硬件骨骼</span>
+                </a>
+            </li>
+            <li>
+                <a href="../software/Software.html">
+                    <span class="icon"><i class="fa fa-superpowers"></i></span>
+                    <span class="title">软件器官</span>
+                 </a>
+             </li>
+             <li>
+                 <a href="../Network&Datestructure/Network&Datestructure.html">
+                     <span class="icon"><i class="fa fa-bluetooth-b"></i></span>
+                     <span class="title">网络神经</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="../Algorithm/Algorithm.html">
+                      <span class="icon"><i class="fa fa-database"></i></span>
+                      <span class="title">算法大脑</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="../hotpoint/hotpoint.html">
+                       <span class="icon"><i class="fa fa-bookmark"></i></span>
+                       <span class="title">热点问题</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../小组介绍/小组介绍.html">
+                        <span class="icon"><i class="fa fa-user-o"></i></span>
+                        <span class="title">小组介绍</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="../Leisure block/Leisure block.html">
+                         <span class="icon"><i class="fa fa-book"></i></span>
+                         <span class="title">休闲街区</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="../exercise/exercise1.html">
+                          <span class="icon"><i class="fa fa-desktop"></i></span>
+                          <span class="title">练习题</span>
+                       </a>
+                   </li>
+          </ul>
+    </div>
+    <div class="tip">
+        <i class="fa fa-chevron-right"> </i>
+    </div>
+</div>
+
+  <div id="background"> 
+    <div id=header2>
+      <h1>在这里享受头发掉完的快乐！</h1>
+      <img src="../picture/xianbei（修改）.jpg">
+        <div id="loginbox2">
+            <a href="./login.html" id="log">登录</a>
+            <a href="./register.html" id="reg">注册</a>
+        </div>
+    </div>
+
+    <div id="login">
+        <form>
+            <p>用户名<br />
+                <input type="text" class="needinput" id="name" placeholder="请输入用户名" />
+            </p>
+            <p>密码<br />
+                <input type="password" class="needinput" id="password" placeholder="请输入密码" />
+            </p>
+            <p>重新输入密码<br />
+                <input type="password" class="needinput" id="confirmpassword" placeholder="重新输入密码">
+            <p><input type="button" value="注册" class="regbutton" onclick="register()"></p>
+            <p class="smtxt">已有账户?<a href="./login.html" style="color:red">登录</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration:none;
+}
+
+#box1{
+    position: absolute;
+    top:2px;
+    left: -100px;
+}
+#zubiao{
+    margin-left: -40px;
+}
+#kouhao{
+    margin-top: 19px;
+    margin-left: 110px;
+    font-size: larger;
+    color: white;
+    font-weight: bold;
+}
+#dlzc{
+    margin-top: 15px;
+    margin-left: 120px;
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+   line-height: 30px;
+    color: #223c70;
+    border-radius: 15px;
+    font-weight: bold;
+}
+#gywm{
+    margin-top: -30px;
+    margin-left: 230px;
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+   line-height: 30px;
+    color: #223c70;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+
+#zhongjian{ 
+
+    text-align: center; 
+     margin: auto; 
+    height: 100%;    
+    position: absolute;
+    margin-left: 50%;
+    width: 665px;
+    margin-top: 12%
+
+
+}
+#dabiaoti{
+margin-left: ;
+text-align: center;
+    margin-top: 13%;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(255,255,255,0.9);
+    margin-left: -332px; 
+   
+}
+#xiaobiaoti{
+    position: absolute;
+    font-size: 25px;
+    color: rgb(255,255,255,0.6);
+    line-height: 60px;
+    margin-top: 25%;
+    margin-left: -212px; 
+}
+ #ksxx{ 
+   position: absolute;  
+    font-size: 25px; 
+     font-weight: bold; 
+    color:#223c70; 
+     background-color:rgb(255,255,255,0.6); 
+    width: 170px; 
+    height: 50px;
+    text-align: center; 
+    margin-left:-85px ; 
+     margin-top: 270px; 
+    border-radius: 20px; 
+     z-index: 9999; 
+     line-height: 2; 
+}

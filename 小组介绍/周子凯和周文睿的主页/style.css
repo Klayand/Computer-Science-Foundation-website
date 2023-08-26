@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    background: url(../小组网站主页/Klayand.jpg);
+}
+body{
+    height: 100vh;
+    background-color: #dcdde0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+#select{
+    display: none;
+}
+
+.card{
+    width: 400px;
+    height: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, .3);
+    transition:all .6s;
+    text-align: center;
+}
+
+.img{
+    width: 400px;
+    height: 230px;
+    background: url('zzk.jfif') no-repeat center center;
+    background-size: cover;
+    transition: .6s;
+}
+
+.title{
+    font-size: 30px;
+    color: rgba(88, 88, 88);
+    margin: 30px 0 30px 0;
+    margin-bottom: 50px;
+    transition: all .6s;
+    transition-delay: .2s;
+}
+
+.desc{
+    width: 400px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+    line-height: 25px;
+    opacity: 1;
+    color: rgba(170, 170, 170);
+}
+
+.content{
+    display: none;
+    height: 1300px;
+    text-align: center;
+    padding: 0 20%;
+    line-height: 40px;
+    background-color: #ffffff;
+}
+
+.content p{
+    margin: 30px 0;
+    text-align: left;
+    display: table;
+}
+
+
+
+#select_lable{
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    z-index: 999;
+}
+
+#select:checked~.card #select_lable{
+    width: 100vw;
+    height: 100vh;
+}
+
+#select:checked~.card{
+    width: 100vw;
+    height: 100vh;
+}
+
+#select:checked~.card .img{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#select:checked~.card .title{
+    transform:translate(-400px);
+    color: #ffffff;
+    font-size: 70px;
+}
+
+#select:checked~.card .desc{
+    display: none;
+    opacity: 0;
+}
+
+#select:checked~.card .content{
+    display: block;
+    animation: content 2s;
+    transform:translateY(-50px) ;
+}
+
+@keyframes content{
+
+    from{
+         opacity: 0;
+         transform:translateY(0px) ;
+    }
+    to{
+        transform:translateY(-50px) ;
+    }
+}

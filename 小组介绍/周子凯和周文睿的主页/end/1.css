@@ -1,0 +1,18 @@
+body{
+background-image:url("../start/image/background2.jpg");
+margin:50px 150px;
+}
+
+h1{
+ text-align: center;margin: 20px;
+}
+
+#btm_copyright{
+    font-size: small;
+    text-align: center;
+    color: azure;
+}
+
+#s_nav{
+    text-align: center;
+}

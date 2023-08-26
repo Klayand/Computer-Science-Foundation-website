@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <meta http-equiv="Accept-CH" content="Viewport-Width">
+    <!-- Dexecure-->
+    <title>&#x6781;&#x5BA2;&#x6218;&#x8BB0;&#x7F51;&#x6613;&#x5B98;&#x7F51;-&#x73A9;&#x6E38;&#x620F;&#x5B66;&#x7F16;&#x7A0B;&#x96F6;&#x57FA;&#x7840;Python&#x5165;&#x95E8;-CodeCombat&#x4E2D;&#x56FD;&#x5B98;&#x65B9;&#x4E2A;&#x4EBA;&#x7248;</title>
+    <meta name="keywords" content="CodeCombat&#xFF0C;&#x7F51;&#x6613;&#x51FA;&#x54C1;&#xFF0C;&#x7F16;&#x7A0B;&#x6E38;&#x620F;&#xFF0C;&#x73A9;&#x6E38;&#x620F;&#x5B66;&#x7F16;&#x7A0B;&#xFF0C;&#x6781;&#x5BA2;&#x6218;&#x8BB0;&#x7834;&#x89E3;&#x7248;&#xFF0C;&#x7F16;&#x7A0B;&#x5165;&#x95E8;&#xFF0C;Scratch&#x8FDB;&#x9636;&#xFF0C;&#x5728;&#x7EBF;&#x5C11;&#x513F;&#x7F16;&#x7A0B;&#xFF0C;&#x4E00;&#x5BF9;&#x4E00;&#x6559;&#x5B66;&#xFF0C;&#x968F;&#x5230;&#x968F;&#x5B66;&#xFF0C;&#x5B66;&#x4E60;&#x53CD;&#x9988;&#xFF0C;&#x5730;&#x7262;&#xFF0C;&#x513F;&#x7AE5;&#x53EF;&#x89C6;&#x5316;&#x7F16;&#x7A0B;&#xFF0C;&#x5C0F;&#x5B69;&#x7F16;&#x7A0B;&#xFF0C;&#x5B69;&#x5B50;&#x7F16;&#x7A0B;&#xFF0C;&#x513F;&#x7AE5;python&#x7F16;&#x7A0B;&#x5165;&#x95E8;&#xFF0C;codeschool&#xFF0C;kodu&#xFF0C;tynker &#xFF0C;kodable&#xFF0C;&#x7F16;&#x7A0B;&#x542F;&#x8499;">
+    <meta name="description" content="&#x6E38;&#x620F;&#x5316;&#x7F16;&#x7A0B;&#x5B66;&#x4E60;&#x9F3B;&#x7956;&#x4E4B;&#x4F5C;CodeCombat&#xFF0C;&#x7F51;&#x6613;&#x516C;&#x53F8;&#x72EC;&#x5BB6;&#x4EE3;&#x7406;&#x56FD;&#x5185;&#x4E2A;&#x4EBA;&#x7248;&#xFF0C;&#x91C7;&#x7528;&#x8FDB;&#x9636;&#x95EF;&#x5173;&#x5F0F;&#x5B66;&#x4E60;&#x6A21;&#x5F0F;&#xFF0C;&#x8BA9;&#x5B66;&#x751F;&#x5728;&#x6E38;&#x620F;&#x5316;&#x7684;&#x8DA3;&#x5473;&#x95EF;&#x5173;&#x4E2D;&#x611F;&#x53D7;&#x5230;&#x7F16;&#x7A0B;&#x5B66;&#x4E60;&#x7684;&#x4E50;&#x8DA3;&#xFF0C;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x638C;&#x63E1; Python&#xFF0C;JavaScript&#x7B49;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x57F9;&#x517B;&#x903B;&#x8F91;&#x601D;&#x7EF4;&#x548C;&#x52A8;&#x624B;&#x521B;&#x9020;&#x80FD;&#x529B;&#xFF0C;&#x5B66;&#x4F1A;&#x7F51;&#x9875;&#x5236;&#x4F5C;&#x4E0E;&#x6E38;&#x620F;&#x5236;&#x4F5C;&#xFF0C;&#x96F6;&#x57FA;&#x7840;&#x5165;&#x95E8;&#x8F7B;&#x677E;&#x641E;&#x5B9A;&#x7F16;&#x7A0B;&#x3002;">
+    <meta property="og:title" content="CodeCombat: Learn to Code by Playing a Game">
+    <meta property="og:url" content="http://codecombat.163.com">
+    <meta property="og:type" content="game">
+    <meta property="og:image" content="http://codecombat.163.com/images/pages/home/play_img.png">
+    <meta property="og:site_name" content="CodeCombat">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CodeCombat: Learn to Code by Playing a Game">
+    <meta name="twitter:url" content="http://codecombat.163.com">
+    <meta name="twitter:site" content="CodeCombat">
+    <meta name="twitter:image:src" content="http://codecombat.163.com/images/pages/base/logo_square_250.png">
+    <meta name="twitter:description" content="Learn programming with a multiplayer live coding strategy game for beginners. Learn Python or JavaScript as you defeat ogres, solve mazes, and level up. Open source HTML5 game!">
+    <meta name="p:domain_verify" content="f5afcb2c36bb8b1cbd70c44b65e5ec75">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link href="https://plus.google.com/115285980638641924488" rel="publisher">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/video-js.css">
+    <link rel="stylesheet" href="/1626399469/stylesheets/app.css">
+    <script>window.javascriptsPath = '/1626399469/javascripts/';</script>
+    <!-- 公共模块-->
+    <script src="/dev/javascripts/common.js"></script>
+    <!-- 虚拟人-->
+    <script src="/virtual-teacher/Build/UnityLoader.js"></script>
+    <script src="/1626399469/javascripts/app.js" defer async data-ace-base="/javascripts/ace">// This data tag needs to be on SOME script with a src for Ace to work</script>
+    <script src="/user-data?sha=1626399469"></script>
+    <!-- Google Analytics-->
+    <script async src="//cst.stu.126.net/u/js/cms/gtag.1.0.js?id=UA-103174683-2"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","UA-103174683-2");</script>
+    <script>
+      window.gaqStr = 'gtag';
+      window.gaProduct = 'codecombat';
+    </script>
+    <script type="text/javascript">
+      ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+      p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+      };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+      n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d2sm9kaamnsba.cloudfront.net/0ykP68INoOVRZMi42LjI.js","snowplow"));
+      window.snowplow('newTracker', 'co', 'com-codecombat-main.collector.snplow.net', {
+        platform: 'web',
+        post: true,
+        contexts: {
+          webPage: true,
+          performanceTiming: true
+        }
+      });
+    </script>
+    <!-- hubble-->
+    <script type="text/javascript">
+      (function(h,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,e=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};e&&c(e,"state")&&(i=JSON.parse(decodeURIComponent(c(e,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",e),history.replaceState(i.desiredHash||"",h.title,j.pathname+j.search)))}catch(m){}var k,g;window.DATracker=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+      0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="DATracker";d.people=d.people||[];d.toString=function(b){var a="DATracker";"DATracker"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="track_heatmap register_attributes register_attributes_once clear_attributes unregister_attributes current_attributes single_pageview disable time_event get_appStatus track set_userId track_pageview track_links track_forms register register_once alias unregister identify login logout signup name_tag set_config reset people.set people.set_once people.set_realname people.set_country people.set_province people.set_city people.set_age people.set_gender people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.set_populationWithAccount  people.set_location people.set_birthday people.set_region people.set_account".split(" ");
+      for(g=0;g<k.length;g++)e(d,k[g]);a._i.push([b,c,f])};a.__SV=1.2;b=h.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://hubble-js-bucket.nosdn.127.net/DATracker.globals.1.5.0.js";c=h.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.DATracker||[]);
+      DATracker.init('MA-92E7-6C2BD5FB5ABF', {
+        heatmap: {
+            isTrackLink: true
+        },persistence: "localStorage"});
+    </script>
+    <script src="//urswebzj.nosdn.127.net/webzj_cdn101/message.js"></script>
+    <script src="/javascripts/raven.min.js" crossorigin="anonymous"></script>
+    <script>
+      Raven
+      .config('https://ecdbccb5faea4dfc80a426d150f0d090@dl.fuxi.netease.com:36803/15')
+      .setUserContext({id: me.get('_id')})
+      .setExtraContext({ sha:  window.serverConfig.buildInfo.sha})
+      // 开发环境不上报错误
+      window.serverConfig.buildInfo.sha !== 'dev' && Raven.install()
+      
+    </script>
+    <!-- CodePlay Tags Header-->
+    <!-- Webpack-inserted CSS:-->
+    <script>
+      //- This runs for pages without specific static templates
+      //- Those pages with static templates run this themselves (in mock.static.pug),
+      //-   after setting window.alreadyLoadedView
+      function onLoad() {
+        try {
+            // IE10 warning
+            var htmlElement = document.querySelector("html");
+            if (htmlElement) {
+                if ($.browser.msie && $.browser.edge != true) {
+                  if ((window.location.pathname || "").indexOf("web-dev-level") < 0) {
+                    alert("CodeCombat does not support Internet Explorer, but runs on all other major browsers.");
+                    }
+                }
+            }
+            // IE8 can't handle this
+            FastClick.attach(document.body);
+        } catch (error) { }
+      }
+    </script>
+  </head>
+  <body class="clearfix" onload="onLoad();">
+    <div id="fb-root"></div>
+    <div id="page-container"></div>
+    <div class="modal-content hide" id="modal-wrapper"></div>
+    <script src="//cst.stu.126.net/u/js/cms/video.6.6.3.js?1527334403648"></script>
+  </body>
+</html>

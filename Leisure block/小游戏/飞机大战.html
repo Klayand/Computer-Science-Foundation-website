@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #contie span{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .person{
+            background:    red;
+        }
+        .kong{
+            background: #c1e2b3;
+        }
+        .shitu{
+            background: #8c8c8c;
+        }
+        .yellow{
+            background: yellow;
+        }
+        .xiaozi{
+            background: burlywood;
+        }
+        #context{
+            position: absolute;
+            right: 10%;
+            top: 25%;
+            font-size: 50px;
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body onkeydown="doKeyDown(event)">
+<h1><a href="../Leisure block.html" style="text-align: center;text-decoration: none;">返回主页</a></h1>
+<div id="contie">
+
+</div>
+<div id="context"></div>
+
+</body>
+<script>
+    //0 空气 1 自己 2 敌人 3 自己的子弹 4 为敌人子弹
+    //两张地图 下面为 地图 上面为 子弹
+    let arr=[];
+    let two=[];
+    let max=18;
+    let point=[{x:max-1,y:max/2}];//默认在最下面 玩家坐标
+    let dom,dom2;
+    let zidan;
+    let diren;//敌人的集合
+    let direnzidan;//敌人子弹的集合
+    let dirensize=0;//敌人的数量
+    let xiaom=0;//击杀敌人数量
+    let zidians=0;//子弹数量
+    let xielang=4;//玩家血量
+    let map = new Map();
+    map.set(0,"<span class=\"kong\"></span>");
+    map.set(1,"<span class=\"shitu\"></span>");
+    map.set(2,"<span class=\"yellow\"></span>");
+    map.set(3,"<span class=\"xiaozi\"></span>");
+    map.set(4,"<span class=\"person\"></span>");
+    function initial() {
+        dom=document.getElementById("contie");
+        dom2=document.getElementById("context");
+        zidan=new Linklist();
+        diren=new Linklist();
+        direnzidan=new Linklist();
+        //初始化数据
+        for (let i=0;i<max;i++){
+            arr[i]=[];
+            two[i]=[];
+            for (let j=0;j<max;j++){
+                two[i][j]=0;
+                arr[i][j]=0;
+            }
+        }
+        //渲染玩家
+        for (let i=0;i<point.length;i++){
+            arr[point[i].x][point[i].y]=1;
+        }
+        playgame();
+    }
+    //添加敌人
+    function creatediren() {
+        diren.add(new Node(0,parseInt(Math.random()*max),2));
+    }
+    //敌人移动的函数
+    function dirmove(node) {
+        node.y=postion123(node.y);
+        node.x=postion123(node.x);
+        //判断我移动的位置是否有玩家子弹
+       if(two[node.x][node.y]===3){
+           let s = zidan.search(node.x,node.y);
+           s.x=0;//设置子弹对象不可达到
+           two[node.x][node.y]=0;
+           node.x=max;//设置敌人不可达到
+           dirensize--;//敌人数量减
+           xiaom++;
+           info();
+       }else //没有死亡就随机开火
+       if(Math.random()>0.2){
+           direnzidan.add(new Node(node.x+1,node.y,4));
+        }
+    }
+    function info(str) {
+
+    dom2.innerText="共打了"+zidians+"子弹 干掉"+xiaom+"敌人"+xielang+"血量"+(str?str:"");
+
+    }
+    //下一步的 坐标
+    function postion123(x) {
+        switch (x) {
+            case 0:
+                return 1;
+            case max:
+                return max-1;
+            default:
+               return x+(Math.random()>0.5?1:-1);
+              }
+    }
+    //渲染函数 把 二维数组 转换
+    function xuanyan() {
+        dom.innerHTML="";
+        for (let i=0;i<max;i++){
+            for (let j=0;j<max;j++){
+                if(two[i][j]!==0){//如果有子弹优先渲染子弹
+                    dom.innerHTML+=map.get(two[i][j]);
+                }else
+                dom.innerHTML+=map.get(arr[i][j]);
+            }
+            dom.innerHTML+="<br>";
+        }
+    }
+    function playgame() {
+        info();
+        xuanyan();
+        let reomve={zidan:0,dzidan:0,diren:0}//记录我要清除的数量
+        dom.hello=setInterval(function () {
+            if(dirensize<3){//当敌人小于3 创建
+                creatediren();
+                dirensize++;
+            }
+            //渲染玩家子弹
+            zidan.Gaidian(zidan,reomve.zidan,(s)=>{
+                two[s.x][s.y]=0;
+                if(s.x>=1){
+                    two[s.x-1][s.y]=s.data;
+                    s.x--;
+                }else{//小于 1 出界面
+                    reomve.zidan++;
+                }
+            },0);
+            //渲染敌人
+            diren.Gaidian(diren,reomve.diren,(s)=>{
+                if(s.x<max){
+                    arr[s.x][s.y]=0;
+                    dirmove(s);
+                    if(s.x<max)
+                    arr[s.x][s.y]=s.data;
+                }else{
+                    reomve.diren++;
+                }
+            },max);
+            //渲染敌人子弹
+            direnzidan.Gaidian(direnzidan,reomve.dzidan,(s)=>{
+                if(s.x<max){// s
+                    two[s.x][s.y]=0;
+                    s.x++;
+                    if(s.x<max){
+                        two[s.x][s.y]=s.data;
+                        //判断我是否计中玩家
+                       if( arr[s.x][s.y]===1){
+                           xielang--;//减少血量
+                           info();
+                           if(xielang===0){//为0清除 游戏结束
+                               clearInterval(dom.hello);
+                               info("gameover");
+                           }
+                       }
+                    }
+
+                }else{
+                    reomve.dzidan++;
+                }
+            },max);
+            xuanyan();
+        },50)
+    }
+    function doKeyDown(event){
+        if(event.keyCode>36&&event.keyCode<41){
+            postion=event.keyCode;
+            //移动玩家
+            let dian1 = dian(point[0].x,point[0].y,postion);
+            //不可以动
+            if(dian1[0]<0||dian1[0]>=max||dian1[1]<0||dian1[1]>=max){
+
+            }else{
+                //原来的清空
+                arr[point[0].x][point[0].y]=0;
+                point[0].x=dian1[0];//修改点
+                point[0].y=dian1[1];
+                arr[point[0].x][point[0].y]=1;//更新点
+            }
+        }else if(event.keyCode===32){//空格发射子弹
+            //在原来对象的上面给一个子弹
+            zidan.add(new Node(point[0].x-1,point[0].y,3));
+            zidians++;
+            info();
+        }
+    }
+    function dian(x,y,key) {
+        let arr;
+        switch (key) {
+            case 37://左键头 0
+                arr=[x,y-1];
+                break;
+            case 38://上键头 1
+                arr=[x-1,y];
+                break;
+            case 39://右箭头 2
+                arr=[x,y+1];
+                break;
+            case 40://下箭头 3
+                arr=[x+1,y];
+                break;
+        }
+        return arr;
+    }
+    class Node{
+        constructor(x,y,data,next) {
+            this.x=x;
+            this.y=y;
+            this.data=data;
+            this.next=next;
+        }
+    }
+    class Linklist{
+        constructor() {
+        this.root=null;//第一个
+        this.last=null;//最后一个
+        }
+        add(node){
+            if(this.root==null){
+                this.root=node;
+                this.last=node;
+            }else{
+                this.last.next=node;
+                this.last=this.last.next;
+            }
+        }
+        //搜索x 和 y 返回对象
+        search(x,y){
+            let s=this.root;
+            while(s!=null){
+                if(s.x===x&&s.y===y) return s;
+                s=s.next;
+            }
+        }
+        //清理不用的对象  把 x为val 的干掉
+        remove(a,val){
+            for(let i=0;i<a;i++)
+            this.root=this.deleteNode(this.root,val);
+            let s = this.root;
+            while(s!=null){
+            if(s.next==null) break;
+              s=s.next;
+            }
+            this.last=s;
+        }
+        deleteNode(head, val) {
+            if(head==null) return null;
+            if(head.x ===val){
+                return head.next;
+            }
+            if(head.next==null) return head;
+            if(head.next.x === val){
+                head.next = head.next.next;
+            }else{
+                head.next=this.deleteNode(head.next,val);
+            }return head;
+        };
+        //链表 不可达数量 回调 我清理的值
+        Gaidian(node,xx,F,val){
+            let s = node.root;
+            xx=0;
+            while(s!=null){
+                F(s);
+                s=s.next;
+            }
+            if(xx>10){//清理对象
+                node.remove(xx,val);
+            }
+        }
+    }
+    initial();
+</script>
+</html>
